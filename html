@@ -1,0 +1,152 @@
+   
+ </head>  
+
+<style>  
+body {  
+ text-align: center;  
+ background-color: white;  
+ } 
+  .gifttxt{
+    padding: 10px;
+  }
+form[name=giftcardcal] {
+  width: 85%;
+  padding: 12px 20px;
+  margin: auto;
+  box-sizing: border-box;
+  border: 12px solid #000000;
+  border-radius: 20px;
+  background-color: #E59866;
+}
+.giftcardfield {
+  width: 58%;
+  padding: 13px 20px;
+  margin: -3px 0;
+  box-sizing: border-box;
+  border: 3px solid #000000 ;
+  border-radius: 12px;
+}
+
+.giftcardfield1 {
+width: 50%;
+  padding: 13px 20px;
+  margin: -3px 0;
+  box-sizing: border-box;
+  border: 1px solid #D35400 ;
+  border-radius: 7px;
+background-color: #E5E8E8;
+}
+
+.giftcalbtn {
+  background-color: #D35400; 
+  color: black; 
+  border: 2px solid Black;
+  padding: 16px 32px;
+  font-size: 20px;
+  border-radius: 17px;
+}
+
+.giftcalbtn:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+  
+  .crtxt{
+    color:black;
+  }
+
+  .nonote{
+    color:red;
+    font-weight: bold;
+  }
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  form[name=giftcardcal] {
+margin: 8, 0;
+ width: 100%;
+}
+
+.giftcardfield {
+  width: 90%;
+  
+}
+
+.giftcardfield1 {
+width: 80%;
+  
+ 
+}
+
+
+
+}
+
+</style>  
+<body>  
+ 
+ <h2 class='crtxt'> Gift Card To Naira Rate Calculator </h2>
+ <p class='crtxt'> Current rates for gift cards in exchange for Naira, Trade Cryptocurrency for cash with Crypto Redeemer</p>
+
+ 
+<form action = "#" method = "post" name = "giftcardcal">  
+   
+   <h4 class='gifttxt'> Select Gift Card </h4>  
+<select name="gift-card-type" class="giftcardfield" required>   
+<option value="" disabled selected> Select Gift Card </option>  
+<option value="255"> Itunes (USA) </option>  
+<option value="380"> Steam (USA) </option>  
+<option value="382"> Google (USA) </option>  
+<option value="430"> Razer Gold (USA) </option>  
+<option value="250"> Xbox (USA) </option>  
+<option value="320"> Amazon Cash receipt (USA) </option>  
+<option value="305"> Amazon Debit receipt (USA) </option>  
+<option value="220"> Amazon Ecode (USA) </option>  
+  <option value="410"> Itunes (Switzerland) </option>
+  <option value="340"> Itunes (Germany) </option>
+  
+  <option value="305"> Itunes (UK) </option>
+    <option value="180"> Itunes (Australia) </option>
+    <option value="3"> Itunes (Japan) </option>
+    
+    <option value="55"> Itunes (Hong Kong) </option>
+    
+    
+    </select>    
+    
+    <h4 class='gifttxt'> Enter Amount </h4>    
+ <input type="text" name="amount" class="giftcardfield" onkeyup="calculate(this.value)"> <br/>
+  <h4 class='gifttxt'> Current price </h4> <input type="text" class="giftcardfield1" name="textbox5" readonly/>   
+ </form> <br/>
+  <p class='crtxt'>
+    Clear and re-type amount when you select new Gift card.
+    <br/>
+    <span class='nonote'>Note:</span> Rates are not stable.
+  </p>
+  <br/> <br/>
+ <a href="https://wa.link/t83jdh">
+<button type="button" class="giftcalbtn">Trade Now</button>
+</a> 
+<br/>
+<br/>
+ 
+ 
+ <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"> </script>  
+
+<script type = "text/javascript">  
+function calculate() {   
+ if(isNaN(document.forms["giftcardcal"]["gift-card-type"].value) || document.forms["giftcardcal"]["gift-card-type"].value=="") {   
+ var text1 = 0;   
+ } else {   
+ var text1 = parseInt(document.forms["giftcardcal"]["gift-card-type"].value);   
+ }   
+ if(isNaN(document.forms["giftcardcal"]["amount"].value) || document.forms["giftcardcal"]["amount"].value=="") {   
+ var text2 = 0;   
+ } else {   
+ var text2 = parseFloat(document.forms["giftcardcal"]["amount"].value);   
+ }   
+ document.forms["giftcardcal"]["textbox5"].value = ("N" + text1*text2);   
+ }  
+</script>  
+</body>  
+ 
